@@ -4,3 +4,4 @@
   = @article.body
 
 = link_to "Back to Article list", articles_path
+= link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}
