@@ -4,6 +4,8 @@
   Tags:
   - @article.tags.each do |tag|
     = link_to tag.name, tag_path(tag)
+- if @article.image.exists?
+  = image_tag @article.image.url
 %p
   = @article.body
 

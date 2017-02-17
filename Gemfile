@@ -18,6 +18,7 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem "haml-rails", "~> 0.9"
+gem "paperclip"
 
 
 group :development, :test do
