@@ -3,6 +3,9 @@
 %p
   = @article.body
 
+%h3= "Comments (#{@article.comments.size})"
+= render partial: 'articles/comment', collection: @article.comments
+= render partial: 'comments/form'
 = link_to "Back to Article list", articles_path
 = link_to "Delete", article_path(@article), method: :delete, data: {confirm: "Really delete the article?"}
 = link_to "Edit Article", edit_article_path(@article)
