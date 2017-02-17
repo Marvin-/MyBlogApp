@@ -1,0 +1,7 @@
+%h3
+  All tags
+
+%ul
+  - @tags.each do |tag|
+    = link_to tag.name, tag_path(tag)
+    = link_to "Delete tag", tag_path(tag), method: :delete

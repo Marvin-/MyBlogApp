@@ -1,6 +1,10 @@
 %h1
   = @article.title
 %p
+  Tags:
+  - @article.tags.each do |tag|
+    = link_to tag.name, tag_path(tag)
+%p
   = @article.body
 
 %h3= "Comments (#{@article.comments.size})"
