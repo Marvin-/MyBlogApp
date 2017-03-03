@@ -23,8 +23,9 @@ gem 'sorcery'
 gem 'pry'
 
 group :development, :test do
- 
   gem 'byebug', platform: :mri
+  gem 'rspec-rails', '~> 3.5'
+  gem 'fabrication', '~> 2.16'
 end
 
 group :development do
