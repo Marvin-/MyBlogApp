@@ -21,6 +21,8 @@ gem "haml-rails", "~> 0.9"
 gem "paperclip"
 gem 'sorcery'
 gem 'pry'
+gem 'capybara'
+gem 'semantic', '~> 1.6'
 
 group :development, :test do
   gem 'byebug', platform: :mri
