@@ -240,7 +240,7 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  capybara
+  capybara (~> 2.12, >= 2.12.1)
   coffee-rails (~> 4.2)
   fabrication (~> 2.16)
   haml-rails (~> 0.9)

@@ -21,7 +21,7 @@ gem "haml-rails", "~> 0.9"
 gem "paperclip"
 gem 'sorcery'
 gem 'pry'
-gem 'capybara'
+gem 'capybara', '~> 2.12', '>= 2.12.1'
 gem 'semantic', '~> 1.6'
 
 group :development, :test do
