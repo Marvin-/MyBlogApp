@@ -22,7 +22,7 @@ gem "paperclip"
 gem 'sorcery'
 gem 'pry'
 gem 'capybara', '~> 2.12', '>= 2.12.1'
-gem 'semantic', '~> 1.6'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 
 group :development, :test do
   gem 'byebug', platform: :mri
