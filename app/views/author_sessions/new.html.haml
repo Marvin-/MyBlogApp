@@ -1,15 +1,36 @@
-%h1
-  Login
-= form_tag author_sessions_path, method: :post do
-  .field
-    = label_tag :email
-    = text_field_tag :email
-    %br/
-  .field
-    = label_tag :password
-    = password_field_tag :password
-    %br/
-  .actions
-    = submit_tag "Login"
+.ui.middle.aligned.center.aligned.grid
+  .column
+    %h2.ui.teal.image.header
+      .content
+        Log-in to your account
+    %form.ui.large.form
+      = form_tag author_sessions_path, method: :post do
+        .field
+          = label_tag :email
+          = text_field_tag :email
+          %br/
+        .field
+          = label_tag :password
+          = password_field_tag :password
+          %br/
+        = submit_tag "Login", :class => "ui button segment"
+    .ui.message
+      New to us?
+      = link_to "Back", articles_path
 
-= link_to "Back", articles_path
+
+/ %h2
+/   Login
+/ = form_tag author_sessions_path, method: :post do
+/   .field
+/     = label_tag :email
+/     = text_field_tag :email
+/     %br/
+/   .field
+/     = label_tag :password
+/     = password_field_tag :password
+/     %br/
+/   .actions
+/     = submit_tag "Login"
+
+/ = link_to "Back", articles_path
