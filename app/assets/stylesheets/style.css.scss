@@ -1,6 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 $primary-color: #DADADA;
+
 body {
   background-color: $primary-color;
+  font-family: 'Slabo 27px', serif;
+}
+.ui.secondary.pointing.menu {
+  background-color: #000;
+  color: #fff;
+  height: 3.5em;
+  .header.item {
+    color: #fff !important;
+  }
+  .right.menu a{
+    color: #fff !important;
+  }
 }
 .column {
   max-width: 28.125em;

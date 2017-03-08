@@ -7,13 +7,24 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    %p.flash= flash.notice
-    .container
-      .content
-        = yield
-        %h6
+    - if flash.notice
+      %p.flash= flash.notice
+    .ui.secondary.pointing.menu
+      .header.item
+        Thought Book
+      .right.menu
+        %a.item
+          = link_to 'New Article', new_article_path
+        %a.item
+          = link_to 'Writers', authors_path
+      .right.menu
+        %a.ui.item.active
           - if logged_in?
-            = "Logged in as #{current_user.email}"
-            = link_to "(logout)", logout_path
+            = "#{current_user.email}"
+            = link_to "Logout", logout_path
           - else
-            = link_to "(login)", login_path
+            = link_to "Login", login_path
+    / .ui.segment
+    /   %p
+    = yield
+    
