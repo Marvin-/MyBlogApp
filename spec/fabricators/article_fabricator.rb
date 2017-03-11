@@ -1,5 +1,5 @@
 Fabricator(:article) do
-  id                 1
+  # id                 1
   title              "MyString"
   body               "MyText"
   created_at         "2017-03-03 14:52:45"

@@ -18,4 +18,7 @@ class Article < ApplicationRecord
     self.tags = new_or_found_tags
   end
 
+  def self.by_month
+    Article.all.group_by{ |r| r.created_at.strftime("%B")}
+  end
 end
