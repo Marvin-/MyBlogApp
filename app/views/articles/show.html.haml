@@ -6,9 +6,8 @@
     = link_to tag.name, tag_path(tag)
 - if @article.image.exists?
   = image_tag @article.image.url
-%p
-  = @article.body
-
+%p= @article.body
+%p= pluralize(@article.view_count, 'view')
 %h3= "Comments (#{@article.comments.size})"
 = render partial: 'articles/comment', collection: @article.comments
 = render partial: 'comments/form'
