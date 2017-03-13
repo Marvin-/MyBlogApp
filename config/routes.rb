@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :articles do
     resources :comments
   end
+  get 'articles/from/:month' => 'articles#index', :as => 'articles/month'
 
   resources :tags
   resources :authors

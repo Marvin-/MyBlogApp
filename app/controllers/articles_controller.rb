@@ -2,10 +2,16 @@ class ArticlesController < ApplicationController
   include ArticlesHelper
   before_action :require_login, except: [:show, :index]
   before_action :find_article, only: [:show, :edit, :update, :destroy]
+  before_action :articles_by_month, only: [:index]
 
   def index
     @articles = Article.all
-    @article_months = Article.by_month
+    @month = params[:month]
+    if @month
+      # params.require(:month)   
+      @month_articles = Article.by_month[@month]
+      render 'by_month'
+    end
   end
 
   def new
