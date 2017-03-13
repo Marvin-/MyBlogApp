@@ -32,4 +32,16 @@ RSpec.describe Article, type: :model do
       expect(months.keys).to include("February")
     end 
   end
+  it 'has a view count column' do 
+    expect(Article).to have_attribute(:view_count)
+  end
+  it 'has an increment_view method' do 
+    expect(article).to respond_to(:increment_view)
+  end
+
+  it 'increments the article view count when clicked' do 
+    expect(article.view_count).to eq 0
+    article.increment_view
+    expect(article.view_count).to eq 1
+  end
 end

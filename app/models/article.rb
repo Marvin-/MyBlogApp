@@ -21,4 +21,8 @@ class Article < ApplicationRecord
   def self.by_month
     Article.all.group_by{ |r| r.created_at.strftime("%B")}
   end
+
+  def increment_view
+    self.view_count += 1
+  end
 end
