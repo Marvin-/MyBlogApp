@@ -1,0 +1,13 @@
+%h2
+  = @month
+- @month_articles.each do |article|
+  %h4= article.title
+  %p= article.body
+  %br/
+  = link_to "View", article_path(article)
+  %hr/
+
+= link_to "Back", root_path
+
+
+  
