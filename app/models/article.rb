@@ -22,7 +22,7 @@ class Article < ApplicationRecord
     Article.all.group_by{ |r| r.created_at.strftime("%B")}
   end
 
-  def self.three_most_popular
+  def self.three_most_viewed
     Article.order("view_count DESC")[0..2]
   end
 

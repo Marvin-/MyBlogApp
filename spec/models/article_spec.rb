@@ -46,6 +46,6 @@ RSpec.describe Article, type: :model do
   end
 
   it 'has list of 3 most popular articles' do 
-    expect(Article).to respond_to(:three_most_popular)
+    expect(Article).to respond_to(:three_most_viewed)
   end
 end
