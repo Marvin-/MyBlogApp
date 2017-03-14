@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :pages
+  get "/:id" => "pages#show"
   root to: 'articles#index'
   resources :articles do
     resources :comments
