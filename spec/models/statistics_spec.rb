@@ -2,24 +2,31 @@ require 'rails_helper'
 
 RSpec.describe Statistics, type: :model do
   let(:article) { Fabricate(:article) }
+  let(:article_1) { Fabricate(:article) }
+
+  before(:each) do 
+    article.comments.create author_name: "Commenter", body: "New Comment"
+    article.comments.create author_name: "Commenter", body: "Second Comment"
+    article_1.comments.create author_name: "James", body: "James' Comment"
+  end
 
   it 'is valid' do 
     expect(true).to be_truthy 
   end
 
-  it "total articles returns a count of all the articles for the blog" do
-    article_1 = Fabricate(:article)
-    article_2 = Fabricate(:article)
-
+  it "returns a count of all the articles for the blog with total articles" do
     stats = Statistics.new
-    assert_equal 2, stats.total_articles
+    expect(stats.total_articles).to eq 2
   end
 
-  it "total comments returns a count of all the comments for the blog" do
-    article_1 = Fabricate(:article)
+  it "returns a count of all the comments for the blog total comments" do
     article.comments.create author_name: "Commenter", body: "New Comment"
-
     stats = Statistics.new
-    assert_equal 1, stats.total_comments
+    expect(stats.total_comments).to eq 4
+  end
+
+  it "returns article with most comments as most popular" do 
+    stats = Statistics.new
+    expect(stats.most_popular).to match article
   end
 end
