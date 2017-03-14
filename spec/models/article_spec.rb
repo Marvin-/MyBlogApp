@@ -44,4 +44,8 @@ RSpec.describe Article, type: :model do
     article.increment_view
     expect(article.view_count).to eq 1
   end
+
+  it 'has list of 3 most popular articles' do 
+    expect(Article).to respond_to(:three_most_popular)
+  end
 end
