@@ -6,6 +6,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
+    @pages = Page.all
     @month = params[:month]
     if @month
       # params.require(:month)   

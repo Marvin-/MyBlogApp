@@ -10,3 +10,8 @@
 %h3
   - @article_months.keys.each do |month|
     = link_to month, articles_month_path(month)
+
+#sidebar
+  %div
+    - @pages.each do |page|
+      = link_to page.title, page_path(page)

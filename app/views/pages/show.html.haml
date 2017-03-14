@@ -1,0 +1,8 @@
+%p#notice= notice
+
+%h1= @page.title
+%p= @page.body
+
+= link_to 'Edit', edit_page_path(@page)
+\|
+= link_to 'Back', pages_path
