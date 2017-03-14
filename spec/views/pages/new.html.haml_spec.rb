@@ -4,7 +4,8 @@ RSpec.describe "pages/new", type: :view do
   before(:each) do
     assign(:page, Page.new(
       :title => "MyString",
-      :body => "MyText"
+      :body => "MyText",
+      :slug => "title"
     ))
   end
 
