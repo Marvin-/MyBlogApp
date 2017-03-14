@@ -20,9 +20,8 @@ RSpec.describe Statistics, type: :model do
   end
 
   it "returns a count of all the comments for the blog total comments" do
-    article.comments.create author_name: "Commenter", body: "New Comment"
     stats = Statistics.new
-    expect(stats.total_comments).to eq 4
+    expect(stats.total_comments).to eq 3
   end
 
   it "returns article with most comments as most popular" do 
