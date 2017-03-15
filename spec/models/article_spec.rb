@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Article, type: :model do
   let(:article) { Fabricate(:article)}
 
-  let(:valid_attributes) {{title: "Test Title"}}
+  let(:valid_attributes) {{title: "Test Title", body: "Body so buff!"}}
   let(:invalid_attributes) { {} }
   
   it 'is valid' do 
@@ -14,6 +14,11 @@ RSpec.describe Article, type: :model do
     article.title = nil
     expect(article).to_not be_valid
   end 
+
+  it 'is invalid without a body' do 
+    article.body = nil
+    expect(article).to_not be_valid
+  end
 
   context 'gets articles sorted by month created' do
 

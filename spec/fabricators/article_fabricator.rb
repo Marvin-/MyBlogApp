@@ -1,7 +1,7 @@
 Fabricator(:article) do
   # id                 1
   title              "MyString"
-  body               "MyText"
+  body               "Words Words and More Words Words"
   created_at         "2017-03-03 14:52:45"
   updated_at         "2017-03-03 14:52:45"
   image_file_name    "MyString"

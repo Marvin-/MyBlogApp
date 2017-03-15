@@ -28,4 +28,28 @@ RSpec.describe Statistics, type: :model do
     stats = Statistics.new
     expect(stats.most_popular).to match article
   end
+
+  it "returns the total number of words across all articles" do 
+    stats = Statistics.new
+    expect(stats.article_word_counts).to eq 12
+  end
+
+  it "returns the average word count across all articles" do 
+    stats = Statistics.new
+    expect(stats.article_average_word_count).to be_a(Float)
+    expect(stats.article_average_word_count).to eq 6.0
+  end
+
+  it "returns the greatest number of words in a single article" do 
+    article.body =  article.body + " another word"
+    article.save
+    total_words =  article.body.split(" ").count
+    stats = Statistics.new 
+    expect(stats.article_max_word_count).to eq total_words
+  end
+
+  it "returns the smallest number of words in a single article" do 
+    stats = Statistics.new
+    expect(stats.article_min_word_count).to eq 6
+  end
 end
