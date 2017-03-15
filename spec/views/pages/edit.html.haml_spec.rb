@@ -4,7 +4,8 @@ RSpec.describe "pages/edit", type: :view do
   before(:each) do
     @page = assign(:page, Page.create!(
       :title => "MyString",
-      :body => "MyText"
+      :body => "MyText",
+      :slug => "title"
     ))
   end
 

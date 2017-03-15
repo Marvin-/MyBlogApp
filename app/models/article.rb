@@ -4,7 +4,7 @@ class Article < ApplicationRecord
   has_many :tags, through: :taggings
   has_attached_file :image
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png"]
-  validates :title, presence: true
+  validates :title, :body, presence: true
 
   def tag_list
     self.tags.collect do |tag|
@@ -22,7 +22,7 @@ class Article < ApplicationRecord
     Article.all.group_by{ |r| r.created_at.strftime("%B")}
   end
 
-  def self.three_most_popular
+  def self.three_most_viewed
     Article.order("view_count DESC")[0..2]
   end
 

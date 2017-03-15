@@ -5,11 +5,13 @@ RSpec.describe "pages/index", type: :view do
     assign(:pages, [
       Page.create!(
         :title => "Title",
-        :body => "MyText"
+        :body => "MyText", 
+        :slug => "title"
       ),
       Page.create!(
         :title => "Title",
-        :body => "MyText"
+        :body => "MyText",
+        :slug => "title"
       )
     ])
   end
