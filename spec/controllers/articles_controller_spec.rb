@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ArticlesController, type: :controller do
   let(:article) { Fabricate(:article)}
-  let(:valid_attributes) { {title: "An Exceptional Article Title"} }
+  let(:valid_attributes) { {title: "An Exceptional Article Title", body: "Body text"} }
   let(:valid_session) {{}}
 
   describe "GET #new" do
